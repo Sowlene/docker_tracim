@@ -75,3 +75,4 @@ Example with SQLite
     docker run -e DATABASE_TYPE=sqlite -p 80:80 -v /tmp/tracim:/etc/tracimetc -v /tmp/tracimvar:/var/tracim algoo/tracim
 
 After execute one of these command, tracim will be available on your system on port 80.
+
