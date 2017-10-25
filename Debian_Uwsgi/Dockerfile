@@ -56,9 +56,9 @@ RUN apt update -q \
 	&& npm install \
 #Compile them
 	&& npm run gulp-dev # for a development environment \
-	&& echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX COMPILE STEP SUCCED XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+	&& echo  COMPILE STEP SUCCED
 #Install Tracim and its dependencies
-#BUG : commande s'interrompt sans que Docker le vois.
+#Warning : command stop and Docker don't see
 RUN cd /tracim/tracim \
 	&& python3 setup.py develop \
 	&& cd /tracim/ \
@@ -66,7 +66,7 @@ RUN cd /tracim/tracim \
 	&& pip3 install -r install/requirements.mysql.txt \
 	&& pip3 install -r install/requirements.postgresql.txt \
 	&& pip3 install mysqlclient \
-	&& echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXX Installation pip OK XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+	&& echo PIP INSTALL OK \
 #Conf files
 	&& cp /tracim/tracim/development.ini.base /tracim/tracim/development.ini \
 	&& cp /tracim/tracim/wsgidav.conf.sample /tracim/tracim/wsgidav.conf \
@@ -78,7 +78,7 @@ RUN cd /tracim/tracim \
 	&& mkdir /var/tracim \
 	&& mkdir /var/tracim/logs \
 	&& mkdir /var/tracim/assets \
-	&& echo XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Preparation Volumes OK XXXXXXXXXXXXXXXXXXXXXXXX \
+	&& echo Volumes OK \
 #Init config files
 	&& ln -s /etc/tracim/uwsgi.ini /etc/uwsgi/apps-available/tracim.ini \
 	&& ln -s /etc/uwsgi/apps-available/tracim.ini /etc/uwsgi/apps-enabled/tracim.ini \
