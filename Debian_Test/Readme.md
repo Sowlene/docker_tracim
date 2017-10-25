@@ -1,4 +1,5 @@
-This is the production docker image for TR
-# Testdocker
+Production Image for Tracim
 
-This is my docker image to install a software 
+# Docker Image
+
+Docker image to install Tracim 
